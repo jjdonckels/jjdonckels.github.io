@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+WRITTEN BY: James Donckels
+EMAIL: donckelj@uci.edu
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="James Donckels">
+  <meta name="description" content="Projects">
+  <!-- link bootsrap plus custom style sheet -->
+  <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Projects | James Donckels</title>
+</head>
+<body>
+  <!-- <div role="navigation" class="container navBar center">
+    <nav>
+      <table class="container navTable">
+        <tr>
+          <th class="navHeader">
+            <a href="index.html" class="navLink">
+              Home
+            </a>
+          </th>
+          <th class="navHeader">
+            <a href="projects.html" class="navLink">
+              Projects
+            </a>
+          </th>
+          <th class="navHeader">
+            <a href="leadership_experience.html" class="navLink">
+              Leadership Experience
+            </a>
+          </th>
+          <th class="navHeader">
+            <a href="personal_life.html" class="navLink">
+              Personal Life
+            </a>
+          </th>
+        </tr>
+      </table>
+    </nav>
+  </div> -->
+
+  <nav class="container-fluid">
+    <div class="row navBar">
+      <div class="col-3 text-center navBtn">
+        <a href="index.html" class="navLink">
+          Home
+        </a>
+      </div>
+      <div class="col-3 text-center navBtn">
+        <a href="projects.html" class="navLink">
+          Projects
+        </a>
+      </div>
+      <div class="col-3 text-center navBtn">
+        <a href="experience.html" class="navLink">
+          Experience
+        </a>
+      </div>
+      <div class="col-3 text-center navBtn">
+        <a href="personal_life.html" class="navLink">
+          Personal Life
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="spacer"></div>
+
+  <h1 class="text-center">
+    Projects
+  </h1>
+
+  <div class="spacer"></div>
+
+  <!-- <p>
+    This is where I'll talk about the SQL database project, maybe the 45J voting
+    system project, and maybe the webjam hackathon webscraping grocery project.
+  </p> -->
+
+  <p>
+    One of the projects I'm most proud of is a SQL style database project that 
+    I made when I took a C++ data structures class in the spring of 2024. During
+    this class, I learned about data structures and algorithms in C++, everything 
+    from linked lists and arrays to stacks and queues to graphs and trees. 
+  </p>
+
+  <div class="spacer"></div>
+
+  <div class="image-container">
+    <img src="photos/bst.JPG" alt="Diagram of a Binary Search Tree" id="bst_pic" style="width:80%">
+    <!-- <div class="top-left ">Example Binary Search Tree</div> -->
+  </div>
+
+  <div class="spacer"></div>
+
+  <p>
+    One of my favorite parts of this course was learning about the king of all algorithms,
+    <a href="https://en.wikipedia.org/wiki/Binary_search" class="external_link" target="_blank">
+      binary search</a>, and how it relates to tree data structures like the binary search tree 
+    pictured above, as well as variations on binary search trees like AVL trees and B trees, shown below. 
+    It was very interesting to learn how the principles of binary search manifested themselves in data structures, and 
+    it was interesting to learn how the trees adapt and change as they grow and shrink. 
+  </p>
+
+  <div class="spacer"></div>
+
+  <div class="image-container">
+    <img src="photos/btree.jpeg" alt="Diagram of a B Tree" id="btree_pic" style="width:80%">
+  </div>
+
+  <div class="spacer"></div>
+
+  <p>
+    Learning about B Trees led into learning about B+ Trees, which added some extra
+    functionality over the previous B Tree, allowing each leaf node to be connected to adjacent
+    nodes through linked-list style links. This allows for efficient iteration through 
+    sequential pieces of data, which is very important when it comes to querying databases.
+  </p>
+
+  <div class="spacer"></div>
+
+  <div class="image-container">
+    <img src="photos/bplustree.jpeg" alt="Diagram of a B+ Tree" id="bplustree_pic" style="width:80%">
+  </div>
+
+  <div class="spacer"></div>
+
+  <p>
+    B+ Trees make up the heart of the database. This is because we can use B+ Trees to create a map.
+    A map takes a given key and maps it to some value. It can map first names to last names, 
+    names to ID numbers, ID numbers to email addresses, and so on. Under the hood, The map is a B+ Tree 
+    of key and value pairs, where the key is used in the B+ Tree to sort and search for everything, allowing 
+    the user to efficiently find the value they're looking for. This is essentially how the data in the 
+    database is queried and returned. 
+  </p>
+
+  <p>
+    For example, if you had a database of students with information like name, major, ID number, and so on, 
+    you could map the ID number for each student to the rest of their information, allowing you to quickly 
+    track down any student you want. In a nutshell, maps are what allow you to find the data you're looking for.
+  </p>
+
+  <p>
+    Next we learned about multimaps, which is very similar to a normal map, but a given key maps to a list 
+    of values rather than a single value. This means if you create a map where you map last names to first names, 
+    The last name "Doe" will map to a list containing both "John" and "Jane," which effectively allows you to 
+    access every person whose last name is "Doe". In the context of a database, this allows you to group all 
+    the records that meet a given condition!
+  </p>
+
+  <p>
+    So, if you have a database with a bunch of people and information about them, like first name, last name, 
+    age, major, etc., you can use one multimap for each attribute where the key is the attribute itself and 
+    it maps to a list of people who have that attribute. If we made it so the list of people who had the 
+    desired attribute that the multimap returns was a list of unique ID numbers instead of the people themselves, we can then use another 
+    map at the end to map the ID number to the desired person! This saves space in all of our multimaps by only 
+    needing to store an ID number for a given person, rather than the people themselves and all their respective 
+    data each time they are processed. 
+  </p>
+
+  <p>
+    With this setup, we can answer all kinds of questions about our data. For example, who are the students 
+    with last names A through G majoring in Math who are also in their 20's? We can start with last names. 
+    In our multimap of last names, we can quickly traverse the branches of the B+ tree to find the name closest
+    to A (the first name in the data set), and we can also quickly and efficiently find the name closest to G by 
+    nature of the B+ tree structure. Then, we can use the linked-list-like nature of the leaves of the B+ tree 
+    to traverse each value (where each value holds a list of ID numbers for people) in this range directly and add
+    all those values to a list. Now we have a list of every ID number of a person whose last name is between A and G 
+    in the alphabet. 
+  </p>
+
+  <p>
+    We can do this same thing to find the ID numbers of every person majoring in Math. This time, we look at the multimap
+    (which is really a B+ tree) for the majors, and get the list of ID numbers that Math is the key for. In other words, 
+    the major of Math will map to the list of everyone who has that major, in the form of their ID number. We can hold on to 
+    that list to compare it with the list of ID numbers for names A through G to return our ultimate result, but we're not 
+    done yet, we still need to figure out who is in their 20's!
+  </p>
+
+  <p>
+    Using the multimap for age, we can once again harness the power of the B+ tree and iterate through every value where the 
+    key is from 20 to 29 to get a list of every person's ID number who satisfies that condition. Now we have a list of 
+    ID numbers for people in their 20's, a different list of ID numbers for people who are Math majors, and a third 
+    list of ID numbers for those whose last name is between A and G in the alphabet. We can find the intersection of these 
+    three lists of ID numbers to get the ultimate list of ID numbers of only the people we're looking for. With this 
+    final list, we can go through it and map each ID number to the person it belongs to, thus giving us the people themselves 
+    who fit our conditions. Just like that, we have processed a database query!
+  </p>
+
+  <p>
+    This database query is similar to SQL queries, and would look like this:
+  </p>
+
+  <!-- <div class="spacer"></div> -->
+
+  <code id="sql-query">select fname, lname from student where (lname >= a and lname &lt;= g) and major = math and (age >= 20 and age &lt; 30) </code>
+
+  <!-- <div class="spacer"></div> -->
+
+  <p style="padding-top: 1em;">
+    With the help of a parser utilizing a graph representation of a finite state machine (pictured below) to interpret the queries, along with using stacks and queues to execute the 
+    <a href="https://en.wikipedia.org/wiki/Shunting_yard_algorithm" class="external_link" target="_blank">shunting yard</a> 
+    and post-order traversal algorithms, statements like the one above are able to be processed, and we can make database queries!
+  </p>
+
+  <div class="spacer"></div>
+
+  <div class="image-container">
+    <img src="photos/parser_graph.jpeg" alt="Diagram of a graph representation of a finite state machine" style="width:80%">
+  </div>
+
+  <div class="spacer"></div>
+
+  <p>
+    Over the course of this project, I learned so much about so many different things. I learned about data structures like Linked-lists, arrays, stacks, queues,
+    trees, heaps, and graphs. I learned programming concepts like recursion and various searching and sorting algorithms. I programmed 
+    all the previously mentioned data structures from scratch in C++ as well, so I got my hands dirty and learned how to work with pointers
+    and memory, as well as debug more seg faults than I care to admit. With all that being said, working on this project and learning data 
+    structures has been one of the most transformational experiences I've had in my programming career. 
+  </p>
+
+  <p>
+    Feel free to check out the project source code <a href="https://github.com/jjdonckels/sql_database" class="external_link" target="_blank">here</a>
+    if you're curious!
+  </p>
+
+</body>
+</html>
