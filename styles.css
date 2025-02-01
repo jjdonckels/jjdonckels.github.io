@@ -33,6 +33,10 @@ body {
   color: blue;
 }
 
+#resume {
+  color: lime;
+}
+
 .navHeader {
   background-color: rgb(61, 84, 84);
   width: 25%;
@@ -164,6 +168,8 @@ p {
   padding-bottom: 1em;
   color: magenta;
 }
+
+
 
 /* button.navBtn + a:visited {
   color: green;
